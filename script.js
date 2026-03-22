@@ -93,10 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', resize);
 
     const waves = [
-      { amplitude: 30, wavelength: 0.003, speed: 0.015, yOffset: 0.75, color: 'rgba(59, 7, 100, 0.12)' },
-      { amplitude: 20, wavelength: 0.005, speed: 0.02, yOffset: 0.78, color: 'rgba(124, 58, 237, 0.08)' },
-      { amplitude: 25, wavelength: 0.004, speed: 0.012, yOffset: 0.82, color: 'rgba(168, 85, 247, 0.06)' },
-      { amplitude: 15, wavelength: 0.006, speed: 0.025, yOffset: 0.72, color: 'rgba(59, 7, 100, 0.06)' },
+      { amplitude: 30, wavelength: 0.003, speed: 0.015, yOffset: 0.75, color: 'rgba(255, 255, 255, 0.06)' },
+      { amplitude: 22, wavelength: 0.005, speed: 0.02, yOffset: 0.78, color: 'rgba(255, 255, 255, 0.04)' },
+      { amplitude: 26, wavelength: 0.004, speed: 0.012, yOffset: 0.82, color: 'rgba(255, 255, 255, 0.08)' },
+      { amplitude: 18, wavelength: 0.006, speed: 0.025, yOffset: 0.72, color: 'rgba(255, 255, 255, 0.03)' },
     ];
 
     function drawWave(wave) {

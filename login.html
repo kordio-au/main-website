@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <script src="coming-soon.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Kordio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: { DEFAULT: '#2a0548', raised: '#220e3a', overlay: '#2a1245' },
+            primary: { 50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff', 300: '#d8b4fe', 400: '#c084fc', 500: '#a855f7', 600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6', 900: '#3b0764' },
+            neon: { purple: '#3b0764', light: '#7c3aed', glow: '#a855f7' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans antialiased bg-white min-h-screen">
+
+  <div class="min-h-screen flex">
+    <!-- LEFT SIDE — Brand panel (dark purple) -->
+    <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-[#2a0548] flex-col justify-between p-12">
+      <!-- Background decoration -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/3 w-[400px] h-[400px] bg-primary-600/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-primary-500/10 rounded-full blur-[100px]"></div>
+      </div>
+
+      <!-- Logo -->
+      <div class="relative z-10">
+        <a href="index.html" class="inline-flex items-center gap-2.5">
+          <div class="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center">
+            <span class="text-white font-bold text-lg">K</span>
+          </div>
+          <span class="text-xl font-bold text-white tracking-tight">Kordio</span>
+        </a>
+      </div>
+
+      <!-- Description -->
+      <div class="relative z-10">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">
+          AI-powered tools that run your business, <span class="text-primary-300">not just answer your phone.</span>
+        </h2>
+        <p class="text-white/50 text-lg leading-relaxed mb-8">
+          From taking orders and sending confirmations to printing KOTs and managing your entire phone workflow — Kordio handles it all.
+        </p>
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center gap-3 text-white/60 text-sm">
+            <svg class="w-5 h-5 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            Answer every call 24/7 — never miss a customer
+          </div>
+          <div class="flex items-center gap-3 text-white/60 text-sm">
+            <svg class="w-5 h-5 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            Take orders, apply deals, handle modifications
+          </div>
+          <div class="flex items-center gap-3 text-white/60 text-sm">
+            <svg class="w-5 h-5 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            Send SMS, emails, print invoices & KOTs automatically
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="relative z-10">
+        <p class="text-white/20 text-sm">&copy; 2026 Kordio. Built in Australia.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE — White, app selection -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 bg-white">
+      <div class="w-full max-w-md">
+        <!-- Mobile logo -->
+        <div class="lg:hidden text-center mb-10">
+          <a href="index.html" class="inline-flex items-center gap-2.5">
+            <div class="w-10 h-10 bg-primary-900 rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">K</span>
+            </div>
+            <span class="text-xl font-bold text-gray-900 tracking-tight">Kordio</span>
+          </a>
+        </div>
+
+        <h1 class="text-2xl font-bold text-gray-900 mb-2">Sign in to your account</h1>
+        <p class="text-gray-500 text-sm mb-10">Select the product you'd like to access.</p>
+
+        <!-- App cards -->
+        <div class="space-y-4">
+          <!-- Clara AI -->
+          <a href="https://ai-agent-web-web.vercel.app/login" class="group block bg-white border-2 border-gray-200 rounded-2xl p-5 hover:border-primary-500 hover:shadow-lg hover:shadow-primary-900/5 transition-all duration-300">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-primary-900 rounded-xl flex items-center justify-center shadow-md shadow-primary-900/20 flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-gray-900 font-semibold text-base group-hover:text-primary-700 transition">Clara AI</h3>
+                <p class="text-gray-500 text-sm">Complete AI Phone Agent for Restaurants</p>
+              </div>
+              <svg class="w-5 h-5 text-gray-300 group-hover:text-primary-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+
+          <!-- Coming Soon -->
+          <div class="block bg-gray-50 border-2 border-dashed border-gray-200 rounded-2xl p-5 cursor-default">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-gray-400 font-semibold text-base">More Products</h3>
+                <p class="text-gray-300 text-sm">Coming soon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-10 text-center">
+          <a href="index.html" class="text-gray-400 hover:text-primary-700 text-sm transition">
+            &larr; Back to kordio.com.au
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -14,7 +14,7 @@
       theme: {
         extend: {
           colors: {
-            surface: { DEFAULT: '#1a0a2e', raised: '#220e3a', overlay: '#2a1245' },
+            surface: { DEFAULT: '#2a0548', raised: '#3b0764', overlay: '#2a1245' },
             primary: { 50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff', 300: '#d8b4fe', 400: '#c084fc', 500: '#a855f7', 600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6', 900: '#3b0764' },
             neon: { purple: '#3b0764', light: '#7c3aed', glow: '#a855f7' }
           },
@@ -40,7 +40,7 @@
 <body class="font-sans antialiased bg-white" x-data="{ mobileMenuOpen: false }">
 
   <!-- ==================== NAVIGATION ==================== -->
-  <nav class="fixed top-0 w-full bg-[#1a0a2e]/60 backdrop-blur-xl border-b border-white/[0.06] z-50 transition-all duration-500" id="navbar">
+  <nav class="fixed top-0 w-full bg-[#2a0548]/60 backdrop-blur-xl border-b border-white/[0.06] z-50 transition-all duration-500" id="navbar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="index.html" class="flex items-center gap-2.5 group">
@@ -52,11 +52,11 @@
 
         <div class="hidden md:flex items-center gap-8">
           <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-            <button class="text-white/50 hover:text-white font-medium transition flex items-center gap-1 text-sm">
+            <button class="text-white hover:text-primary-300 font-medium transition flex items-center gap-1 text-sm">
               Products
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div x-show="open" x-transition class="absolute top-full left-0 mt-3 w-80 bg-[#111111]/95 backdrop-blur-xl rounded-xl border border-white/[0.08] p-2 shadow-2xl shadow-black/50">
+            <div x-show="open" x-transition class="absolute top-full left-0 mt-3 w-80 bg-[#2a0548]/95 backdrop-blur-xl rounded-xl border border-white/[0.08] p-2 shadow-2xl shadow-black/50">
               <a href="clara.html" class="flex items-start gap-3 p-3 rounded-lg hover:bg-white/[0.05] transition group">
                 <div class="w-10 h-10 bg-gradient-to-br from-primary-900 to-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
@@ -68,13 +68,13 @@
               </a>
             </div>
           </div>
-          <a href="about.html" class="text-white/50 hover:text-white font-medium transition text-sm">About</a>
-          <a href="contact.html" class="text-white/50 hover:text-white font-medium transition text-sm">Contact</a>
+          <a href="about.html" class="text-white hover:text-primary-300 font-medium transition text-sm">About</a>
+          <a href="contact.html" class="text-white hover:text-primary-300 font-medium transition text-sm">Contact</a>
         </div>
 
         <div class="hidden md:flex items-center gap-3">
-          <a href="https://ai-agent-web-web.vercel.app/login" class="text-white/50 hover:text-white font-medium transition text-sm">Login</a>
-          <a href="clara.html#pricing" class="bg-primary-900 hover:bg-primary-800 text-white px-5 py-2 rounded-lg font-medium text-sm transition shadow-lg shadow-primary-900/25 neon-btn">Get Started</a>
+          <a href="login.html" class="border border-white/20 text-white hover:bg-white/10 hover:border-white/30 px-5 py-2 rounded-lg font-medium text-sm transition">Login</a>
+          <a href="clara.html#pricing" class="bg-[#2a0548] hover:bg-[#3b0764] text-white px-5 py-2 rounded-lg font-medium text-sm transition shadow-lg shadow-primary-900/25 neon-btn">Get Started</a>
         </div>
 
         <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 rounded-lg hover:bg-white/[0.05] text-white/70">
@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-[#111111]/98 backdrop-blur-xl border-t border-white/[0.06] px-4 py-4 space-y-1">
+    <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-[#2a0548]/98 backdrop-blur-xl border-t border-white/[0.06] px-4 py-4 space-y-1">
       <a href="clara.html" class="block px-4 py-2.5 rounded-lg hover:bg-white/[0.05] text-white/70 font-medium text-sm">Clara AI</a>
       <a href="about.html" class="block px-4 py-2.5 rounded-lg hover:bg-white/[0.05] text-white/70 font-medium text-sm">About</a>
       <a href="contact.html" class="block px-4 py-2.5 rounded-lg hover:bg-white/[0.05] text-white/70 font-medium text-sm">Contact</a>
@@ -94,14 +94,14 @@
   </nav>
 
   <!-- ==================== HERO — FULL-SCREEN VIDEO ==================== -->
-  <section class="relative min-h-screen flex items-end overflow-hidden bg-[#1a0a2e]">
+  <section class="relative min-h-screen flex items-end overflow-hidden bg-[#2a0548]">
     <!-- Background Video -->
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0" id="heroVideo">
-      <source src="https://assets.mixkit.co/videos/4043/4043-720.mp4" type="video/mp4">
+      <source src="videos/hero.mp4" type="video/mp4">
     </video>
 
     <!-- Gradient overlay — dark at bottom for text, transparent at top for video -->
-    <div class="absolute inset-0 bg-gradient-to-t from-[#1a0a2e]/80 via-[#1a0a2e]/20 to-[#1a0a2e]/10 z-[1]"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#2a0548]/90 via-[#2a0548]/40 to-[#2a0548]/15 z-[1]"></div>
 
     <!-- Wave Canvas -->
     <canvas id="waveCanvas" style="z-index: 2;"></canvas>
@@ -109,17 +109,17 @@
     <!-- Content — left-aligned, anchored to bottom -->
     <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-28 pt-40" style="z-index: 10;">
       <div class="max-w-3xl">
-        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.08] mb-6 text-white drop-shadow-lg">
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.08] mb-6 text-white" style="text-shadow: 0 2px 20px rgba(0,0,0,0.6), 0 4px 40px rgba(0,0,0,0.4);">
           AI-Powered Solutions for<br>
           <span class="hero-gradient-text">Modern Businesses.</span>
         </h1>
 
-        <p class="text-lg sm:text-xl text-white/70 max-w-2xl mb-10 leading-relaxed drop-shadow">
+        <p class="text-lg sm:text-xl text-white max-w-2xl mb-10 leading-relaxed" style="text-shadow: 0 2px 15px rgba(0,0,0,0.5), 0 1px 5px rgba(0,0,0,0.4);">
           We build intelligent AI tools that automate your operations, delight your customers, and grow your business.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#products" class="bg-primary-900 hover:bg-primary-800 text-white px-8 py-4 rounded-xl font-semibold transition text-lg shadow-xl shadow-primary-900/30 hover:shadow-primary-900/50 neon-btn">
+          <a href="#products" class="bg-[#2a0548] hover:bg-[#3b0764] text-white px-8 py-4 rounded-xl font-semibold transition text-lg shadow-xl shadow-[#2a0548]/40">
             Explore Our Products
           </a>
           <a href="contact.html" class="border border-white/20 text-white hover:bg-white/10 hover:border-white/30 px-8 py-4 rounded-xl font-semibold transition text-lg backdrop-blur-sm">
@@ -136,19 +136,27 @@
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <!-- Left: Image -->
         <div class="relative fade-in-up">
-          <div class="rounded-2xl overflow-hidden shadow-2xl shadow-primary-900/10">
-            <div class="aspect-[4/3] bg-gradient-to-br from-primary-100 via-primary-50 to-white flex items-center justify-center">
-              <div class="text-center p-8">
-                <div class="w-20 h-20 bg-gradient-to-br from-primary-900 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary-900/25">
-                  <span class="text-white font-bold text-3xl">K</span>
-                </div>
-                <p class="text-primary-900 font-bold text-2xl">Kordio</p>
-                <p class="text-primary-700/60 text-sm mt-1">Built in Melbourne, Australia</p>
+          <div class="rounded-2xl overflow-hidden bg-[#2a0548] p-8">
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div class="bg-white/[0.06] rounded-xl p-5 text-center">
+                <p class="text-3xl font-bold text-white mb-1">24/7</p>
+                <p class="text-white/40 text-xs">Availability</p>
+              </div>
+              <div class="bg-white/[0.06] rounded-xl p-5 text-center">
+                <p class="text-3xl font-bold text-white mb-1">&lt;1s</p>
+                <p class="text-white/40 text-xs">Response Time</p>
+              </div>
+              <div class="bg-white/[0.06] rounded-xl p-5 text-center">
+                <p class="text-3xl font-bold text-white mb-1">99.9%</p>
+                <p class="text-white/40 text-xs">Uptime</p>
+              </div>
+              <div class="bg-white/[0.06] rounded-xl p-5 text-center">
+                <p class="text-3xl font-bold text-white mb-1">1000+</p>
+                <p class="text-white/40 text-xs">Calls Handled</p>
               </div>
             </div>
+            <p class="text-white/30 text-sm text-center">Enterprise-grade performance, every call</p>
           </div>
-          <!-- Decorative accent -->
-          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-900/5 rounded-2xl -z-10"></div>
         </div>
 
         <!-- Right: Text -->
@@ -223,20 +231,28 @@
             </div>
             <!-- What Clara does — end-to-end for restaurants -->
             <div class="grid grid-cols-2 gap-3">
-              <div class="bg-white border border-gray-200 rounded-xl p-4 text-center">
-                <p class="text-2xl mb-1">📞</p>
+              <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3">
+                <div class="w-9 h-9 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
                 <p class="text-gray-700 text-sm font-medium">Answer Calls</p>
               </div>
-              <div class="bg-white border border-gray-200 rounded-xl p-4 text-center">
-                <p class="text-2xl mb-1">🍕</p>
+              <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3">
+                <div class="w-9 h-9 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                </div>
                 <p class="text-gray-700 text-sm font-medium">Take Orders</p>
               </div>
-              <div class="bg-white border border-gray-200 rounded-xl p-4 text-center">
-                <p class="text-2xl mb-1">📱</p>
+              <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3">
+                <div class="w-9 h-9 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                </div>
                 <p class="text-gray-700 text-sm font-medium">SMS & Email</p>
               </div>
-              <div class="bg-white border border-gray-200 rounded-xl p-4 text-center">
-                <p class="text-2xl mb-1">🖨️</p>
+              <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3">
+                <div class="w-9 h-9 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                </div>
                 <p class="text-gray-700 text-sm font-medium">Print KOT & Invoice</p>
               </div>
             </div>
@@ -248,7 +264,7 @@
   </section>
 
   <!-- ==================== VIDEO DEMO SECTION (DARK) ==================== -->
-  <section class="py-20 lg:py-28 relative overflow-hidden bg-[#1a0a2e]">
+  <section class="py-20 lg:py-28 relative overflow-hidden bg-[#2a0548]">
     <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-primary-900/[0.08] rounded-full blur-[150px]"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -342,7 +358,7 @@
           <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
             <svg class="w-8 h-8 text-primary-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Built in Australia</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Australian-Owned</h3>
           <p class="text-gray-500 leading-relaxed">Local team, local support. We understand Australian businesses because we are one.</p>
         </div>
 
@@ -432,14 +448,14 @@
   </section>
 
   <!-- ==================== CTA (DARK) ==================== -->
-  <section class="py-20 lg:py-28 relative overflow-hidden bg-[#1a0a2e]">
+  <section class="py-20 lg:py-28 relative overflow-hidden bg-[#2a0548]">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-primary-900/[0.12] rounded-full blur-[180px]"></div>
 
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
       <p class="text-lg text-white/50 mb-10 max-w-2xl mx-auto">Join the businesses already using Kordio's AI tools to save time, reduce costs, and grow faster.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="clara.html" class="bg-primary-900 hover:bg-primary-800 text-white px-8 py-4 rounded-xl font-semibold transition text-lg shadow-xl shadow-primary-900/30 neon-btn">
+        <a href="clara.html" class="bg-[#2a0548] hover:bg-[#3b0764] text-white px-8 py-4 rounded-xl font-semibold transition text-lg shadow-xl shadow-primary-900/30 neon-btn">
           Explore Clara AI
         </a>
         <a href="contact.html" class="border border-white/15 text-white/80 hover:text-white hover:bg-white/[0.05] px-8 py-4 rounded-xl font-semibold transition text-lg">
@@ -450,7 +466,7 @@
   </section>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="border-t border-white/[0.06] pt-16 pb-8 bg-[#1a0a2e]">
+  <footer class="border-t border-white/[0.06] pt-16 pb-8 bg-[#2a0548]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-12 mb-12">
         <div class="md:col-span-1">
@@ -460,7 +476,7 @@
             </div>
             <span class="text-lg font-bold text-white tracking-tight">Kordio</span>
           </a>
-          <p class="text-white/30 text-sm leading-relaxed mb-6">AI-powered solutions for modern businesses. Built in Australia.</p>
+          <p class="text-white/30 text-sm leading-relaxed mb-6">AI-powered solutions for modern businesses.</p>
           <div class="flex gap-4">
             <a href="#" class="text-white/20 hover:text-primary-400 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
             <a href="#" class="text-white/20 hover:text-primary-400 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
@@ -490,7 +506,7 @@
         </div>
       </div>
       <div class="border-t border-white/[0.06] pt-8 text-center">
-        <p class="text-white/20 text-sm">&copy; 2026 Kordio. Built in Australia.</p>
+        <p class="text-white/20 text-sm">&copy; 2026 Kordio. All rights reserved.</p>
       </div>
     </div>
   </footer>

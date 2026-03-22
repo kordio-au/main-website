@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(netstat -ano)",
+      "WebSearch",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:pixabay.com)",
+      "WebFetch(domain:mixkit.co)",
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(curl -sI \"https://assets.mixkit.co/videos/4907/4907-720.mp4\")",
+      "Bash(curl -sI \"https://assets.mixkit.co/videos/34563/34563-720.mp4\")",
+      "Bash(curl -sI \"https://assets.mixkit.co/videos/51583/51583-720.mp4\")",
+      "WebFetch(domain:coverr.co)",
+      "Bash(curl -sI \"https://cdn.pixabay.com/video/2023/10/09/184235-873002942_large.mp4\")",
+      "Bash(curl -sI \"https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4\")",
+      "Bash(curl -sI \"https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_30fps.mp4\")",
+      "Bash(curl -sI \"https://videos.pexels.com/video-files/4549805/4549805-hd_1920_1080_30fps.mp4\")",
+      "Bash(curl -sI \"https://videos.pexels.com/video-files/2890236/2890236-hd_1920_1080_24fps.mp4\")",
+      "Bash(curl -sI \"https://assets.mixkit.co/videos/15875/15875-720.mp4\")",
+      "Bash(git remote:*)",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh auth:*)",
+      "Bash(git config:*)",
+      "Bash(git credential-manager:*)",
+      "Bash(cmdkey /list)",
+      "Bash(grep -rn \"ai-agent-web-web.vercel.app/login\" /c/Users/isuru/OneDrive/Documents/Personal/AI/kordio-website/*.html)",
+      "Bash(curl -sI \"https://videos.pexels.com/video-files/32583395/32583395-hd_1920_1080_25fps.mp4\")",
+      "Bash(curl -sI \"https://www.pexels.com/download/video/3723445/\")"
+    ]
+  }
+}

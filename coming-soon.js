@@ -16,7 +16,7 @@ if (COMING_SOON) {
           position: fixed;
           inset: 0;
           z-index: 99999;
-          background: #1a0a2e;
+          background: #2a0548;
           display: flex;
           align-items: center;
           justify-content: center;

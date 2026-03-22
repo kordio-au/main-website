@@ -15,8 +15,8 @@ html {
 section[class*="bg-white"],
 section[class*="bg-[#f8fafc]"],
 section[class*="bg-[#0f0f15]"],
-section[class*="bg-[#1a0a2e]"],
-footer[class*="bg-[#1a0a2e]"] {
+section[class*="bg-[#2a0548]"],
+footer[class*="bg-[#2a0548]"] {
   position: relative;
   z-index: 1;
 }
@@ -97,12 +97,8 @@ footer[class*="bg-[#1a0a2e]"] {
 
 /* ==================== HERO GRADIENT TEXT ==================== */
 .hero-gradient-text {
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 30%, #c084fc 60%, #7c3aed 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 6s ease infinite;
+  color: #c084fc;
+  -webkit-text-fill-color: #c084fc;
 }
 
 @keyframes gradient-shift {
