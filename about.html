@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <script src="coming-soon.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Kordio</title>
+  <meta name="description" content="Kordio is an Australian AI company building intelligent tools for small businesses. Learn about our mission, values, and team.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: { DEFAULT: '#1a0a2e', raised: '#220e3a', overlay: '#2a1245' },
+            primary: { 50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff', 300: '#d8b4fe', 400: '#c084fc', 500: '#a855f7', 600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6', 900: '#3b0764' },
+            neon: { purple: '#3b0764', light: '#7c3aed', glow: '#a855f7' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          animation: {
+            'gradient': 'gradient-shift 6s ease infinite',
+            'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
+            'float': 'float 6s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased" x-data="{ mobileMenuOpen: false }">
+
+  <!-- ==================== NAVIGATION (DARK) ==================== -->
+  <nav class="fixed top-0 w-full bg-[#1a0a2e]/60 backdrop-blur-xl border-b border-white/[0.06] z-50 transition-all duration-500" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <div class="w-8 h-8 bg-gradient-to-br from-neon-purple to-purple-500 rounded-lg flex items-center justify-center shadow-lg shadow-neon-purple/20 group-hover:shadow-neon-purple/40 transition-shadow">
+            <span class="text-white font-bold text-sm">K</span>
+          </div>
+          <span class="text-lg font-bold text-white tracking-tight">Kordio</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+            <button class="text-white/50 hover:text-white font-medium transition flex items-center gap-1 text-sm">
+              Products
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1" class="absolute top-full left-0 mt-3 w-80 bg-[#220e3a]/95 backdrop-blur-xl rounded-xl border border-white/[0.08] p-2 shadow-2xl shadow-black/50">
+              <a href="clara.html" class="flex items-start gap-3 p-3 rounded-lg hover:bg-white/[0.05] transition group">
+                <div class="w-10 h-10 bg-gradient-to-br from-neon-purple to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg shadow-neon-purple/25">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-white group-hover:text-neon-light transition text-sm">Clara AI</p>
+                  <p class="text-xs text-white/40 mt-0.5">AI Virtual Receptionist & Phone Ordering</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <a href="about.html" class="text-neon-light font-medium text-sm">About</a>
+          <a href="contact.html" class="text-white/50 hover:text-white font-medium transition text-sm">Contact</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-3">
+          <a href="https://ai-agent-web-web.vercel.app/login" class="text-white/50 hover:text-white font-medium transition text-sm">Login</a>
+          <a href="clara.html#pricing" class="relative bg-neon-purple hover:bg-primary-600 text-white px-5 py-2 rounded-lg font-medium text-sm transition shadow-lg shadow-neon-purple/25 hover:shadow-neon-purple/40 neon-btn">Get Started</a>
+        </div>
+
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 rounded-lg hover:bg-white/[0.05] text-white/70">
+          <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-[#220e3a]/98 backdrop-blur-xl border-t border-white/[0.06] px-4 py-4 space-y-1">
+      <a href="clara.html" class="block px-4 py-2.5 rounded-lg hover:bg-white/[0.05] text-white/70 font-medium text-sm">Clara AI</a>
+      <a href="about.html" class="block px-4 py-2.5 rounded-lg bg-white/[0.05] text-neon-light font-medium text-sm">About</a>
+      <a href="contact.html" class="block px-4 py-2.5 rounded-lg hover:bg-white/[0.05] text-white/70 font-medium text-sm">Contact</a>
+      <hr class="border-white/[0.06] my-2">
+      <a href="https://ai-agent-web-web.vercel.app/login" class="block px-4 py-2.5 rounded-lg hover:bg-white/[0.05] text-white/50 font-medium text-sm">Login</a>
+      <a href="clara.html#pricing" class="block px-4 py-2.5 rounded-lg bg-neon-purple text-white text-center font-medium text-sm shadow-lg shadow-neon-purple/25">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO BANNER (DARK) ==================== -->
+  <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden bg-[#1a0a2e]">
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-neon-purple/[0.06] rounded-full blur-[150px]"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+      <p class="text-neon-light font-semibold text-xs uppercase tracking-[0.2em] mb-4">About Kordio</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.1]">Making Enterprise AI<br>Accessible to Everyone</h1>
+      <p class="text-lg text-white/40 max-w-2xl mx-auto leading-relaxed">We're on a mission to give every small business access to the same AI technology that powers the world's biggest companies.</p>
+    </div>
+  </section>
+
+  <!-- ==================== MISSION (LIGHT) ==================== -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center fade-in-up">
+        <p class="text-primary-600 font-semibold text-xs uppercase tracking-[0.2em] mb-3">Our Mission</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">We Believe Every Business Deserves Enterprise-Grade AI</h2>
+        <p class="text-gray-500 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+          Most AI tools are built for big companies with big budgets. We think that's wrong. The local pizza shop, the plumber around the corner, the family dental practice — they all deserve technology that helps them compete and grow.
+        </p>
+        <p class="text-gray-500 text-lg leading-relaxed max-w-3xl mx-auto">
+          That's why we build AI solutions that are affordable, easy to set up, and purpose-built for the way real small businesses actually operate. No jargon, no complexity — just tools that work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== VALUES (LIGHT) ==================== -->
+  <section class="py-20 lg:py-28 bg-[#f8fafc]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up">
+        <p class="text-primary-600 font-semibold text-xs uppercase tracking-[0.2em] mb-3">Our Values</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">What We Stand For</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Australian Made -->
+        <div class="light-card rounded-2xl p-8 text-center group hover:border-primary-200 transition-all duration-500 fade-in-up">
+          <div class="w-16 h-16 bg-primary-50 border border-primary-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-100 transition-all">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Australian Made</h3>
+          <p class="text-gray-500 leading-relaxed text-sm">Built and supported by a local team in Australia. We understand the market because we're part of it. Your data stays local, your support is a phone call away.</p>
+        </div>
+
+        <!-- Customer First -->
+        <div class="light-card rounded-2xl p-8 text-center group hover:border-primary-200 transition-all duration-500 fade-in-up">
+          <div class="w-16 h-16 bg-primary-50 border border-primary-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-100 transition-all">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Customer First</h3>
+          <p class="text-gray-500 leading-relaxed text-sm">Every feature we build starts with a real problem a real business owner told us about. We don't build technology for technology's sake — we build solutions that deliver outcomes.</p>
+        </div>
+
+        <!-- Simplicity -->
+        <div class="light-card rounded-2xl p-8 text-center group hover:border-primary-200 transition-all duration-500 fade-in-up">
+          <div class="w-16 h-16 bg-primary-50 border border-primary-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-100 transition-all">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Simplicity</h3>
+          <p class="text-gray-500 leading-relaxed text-sm">If it's not easy to use, it's not good enough. Our products are designed for business owners, not developers. Set up in minutes, not weeks. No technical knowledge required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEAM (LIGHT) ==================== -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up">
+        <p class="text-primary-600 font-semibold text-xs uppercase tracking-[0.2em] mb-3">Team</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Meet the Team</h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">A small team with big ambitions, building from Melbourne, Australia.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <!-- Sameera -->
+        <div class="light-card rounded-2xl p-8 text-center fade-in-up">
+          <div class="w-20 h-20 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-10 h-10 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900">Sameera</h3>
+        </div>
+
+        <!-- Isuru -->
+        <div class="light-card rounded-2xl p-8 text-center fade-in-up">
+          <div class="w-20 h-20 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-10 h-10 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900">Isuru</h3>
+        </div>
+
+        <!-- Kassapa -->
+        <div class="light-card rounded-2xl p-8 text-center fade-in-up">
+          <div class="w-20 h-20 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-10 h-10 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900">Kassapa</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA (DARK) ==================== -->
+  <section class="py-20 lg:py-28 relative overflow-hidden bg-[#1a0a2e]">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-neon-purple/[0.08] rounded-full blur-[150px]"></div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Want to Work With Us?</h2>
+      <p class="text-lg text-white/35 mb-10 max-w-2xl mx-auto">Whether you want to use our products or join our team, we'd love to hear from you.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="clara.html" class="group relative bg-neon-purple hover:bg-primary-600 text-white px-8 py-3.5 rounded-xl font-semibold transition text-lg shadow-xl shadow-neon-purple/25 hover:shadow-neon-purple/40 neon-btn">
+          Explore Clara AI
+        </a>
+        <a href="contact.html" class="border border-white/[0.12] text-white/70 hover:text-white hover:bg-white/[0.05] hover:border-white/[0.2] px-8 py-3.5 rounded-xl font-semibold transition text-lg">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER (DARK) ==================== -->
+  <footer class="border-t border-white/[0.06] pt-16 pb-8 bg-[#1a0a2e]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2.5 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-neon-purple to-purple-500 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-sm">K</span>
+            </div>
+            <span class="text-lg font-bold text-white tracking-tight">Kordio</span>
+          </a>
+          <p class="text-white/30 text-sm leading-relaxed">AI-powered solutions for modern businesses. Built in Australia.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Products</h4>
+          <ul class="space-y-3">
+            <li><a href="clara.html" class="text-white/30 hover:text-neon-light transition text-sm">Clara AI</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="text-white/30 hover:text-neon-light transition text-sm">About</a></li>
+            <li><a href="contact.html" class="text-white/30 hover:text-neon-light transition text-sm">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Legal</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-white/30 hover:text-neon-light transition text-sm">Privacy Policy</a></li>
+            <li><a href="#" class="text-white/30 hover:text-neon-light transition text-sm">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/[0.06] pt-8 text-center">
+        <p class="text-white/20 text-sm">&copy; 2026 Kordio. Built in Australia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <script src="coming-soon.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Kordio</title>
+  <meta name="description" content="Get in touch with the Kordio team. We'd love to hear from you and help you get started with AI-powered business solutions.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: { DEFAULT: '#1a0a2e', raised: '#220e3a', overlay: '#2a1245' },
+            primary: { 50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff', 300: '#d8b4fe', 400: '#c084fc', 500: '#a855f7', 600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6', 900: '#3b0764' },
+            neon: { purple: '#3b0764', light: '#7c3aed', glow: '#a855f7' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          animation: {
+            'gradient': 'gradient-shift 6s ease infinite',
+            'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
+            'float': 'float 6s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased" x-data="{ mobileMenuOpen: false, formSubmitted: false }">
+
+  <!-- ==================== NAVIGATION (DARK) ==================== -->
+  <nav class="fixed top-0 w-full bg-[#1a0a2e]/60 backdrop-blur-xl border-b border-white/[0.06] z-50 transition-all duration-500" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <div class="w-8 h-8 bg-gradient-to-br from-neon-purple to-purple-500 rounded-lg flex items-center justify-center shadow-lg shadow-neon-purple/20 group-hover:shadow-neon-purple/40 transition-shadow">
+            <span class="text-white font-bold text-sm">K</span>
+          </div>
+          <span class="text-lg font-bold text-white tracking-tight">Kordio</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+            <button class="text-white/50 hover:text-white font-medium transition flex items-center gap-1 text-sm">
+              Products
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1" class="absolute top-full left-0 mt-3 w-80 bg-[#220e3a]/95 backdrop-blur-xl rounded-xl border border-white/[0.08] p-2 shadow-2xl shadow-black/50">
+              <a href="clara.html" class="flex items-start gap-3 p-3 rounded-lg hover:bg-white/[0.05] transition group">
+                <div class="w-10 h-10 bg-gradient-to-br from-neon-purple to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg shadow-neon-purple/25">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-white group-hover:text-neon-light transition text-sm">Clara AI</p>
+                  <p class="text-xs text-white/40 mt-0.5">AI Virtual Receptionist & Phone Ordering</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <a href="about.html" class="text-white/50 hover:text-white font-medium transition text-sm">About</a>
+          <a href="contact.html" class="text-neon-light font-medium text-sm">Contact</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-3">
+          <a href="https://ai-agent-web-web.vercel.app/login" class="text-white/50 hover:text-white font-medium transition text-sm">Login</a>
+          <a href="clara.html#pricing" class="relative bg-neon-purple hover:bg-primary-600 text-white px-5 py-2 rounded-lg font-medium text-sm transition shadow-lg shadow-neon-purple/25 hover:shadow-neon-purple/40 neon-btn">Get Started</a>
+        </div>
+
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 rounded-lg hover:bg-white/[0.05] text-white/70">
+          <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-[#220e3a]/98 backdrop-blur-xl border-t border-white/[0.06] px-4 py-4 space-y-1">
+      <a href="clara.html" class="block px-4 py-2.5 rounded-lg hover:bg-white/[0.05] text-white/70 font-medium text-sm">Clara AI</a>
+      <a href="about.html" class="block px-4 py-2.5 rounded-lg hover:bg-white/[0.05] text-white/70 font-medium text-sm">About</a>
+      <a href="contact.html" class="block px-4 py-2.5 rounded-lg bg-white/[0.05] text-neon-light font-medium text-sm">Contact</a>
+      <hr class="border-white/[0.06] my-2">
+      <a href="https://ai-agent-web-web.vercel.app/login" class="block px-4 py-2.5 rounded-lg hover:bg-white/[0.05] text-white/50 font-medium text-sm">Login</a>
+      <a href="clara.html#pricing" class="block px-4 py-2.5 rounded-lg bg-neon-purple text-white text-center font-medium text-sm shadow-lg shadow-neon-purple/25">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- ==================== CONTACT HEADER (DARK) ==================== -->
+  <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden bg-[#1a0a2e]">
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-neon-purple/[0.06] rounded-full blur-[150px]"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+      <p class="text-neon-light font-semibold text-xs uppercase tracking-[0.2em] mb-4">Contact</p>
+      <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Get in Touch</h1>
+      <p class="text-lg text-white/35 max-w-2xl mx-auto">Have a question about Kordio or Clara AI? Want to see a demo? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT CONTENT (LIGHT) ==================== -->
+  <section class="py-16 lg:py-24 bg-[#f8fafc]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+
+        <!-- Contact Form -->
+        <div class="fade-in-up">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+
+          <!-- Success Message -->
+          <div x-show="formSubmitted" x-transition class="light-card rounded-xl p-6 mb-6 !border-emerald-300">
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div>
+                <p class="font-semibold text-emerald-700">Message sent!</p>
+                <p class="text-emerald-600 text-sm">We'll get back to you within 24 hours.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <form x-show="!formSubmitted" action="https://api.web3forms.com/submit" method="POST" @submit.prevent="
+            fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              body: new FormData($el)
+            }).then(r => r.json()).then(data => {
+              if (data.success) { formSubmitted = true; }
+              else { alert('Something went wrong. Please try again.'); }
+            }).catch(() => alert('Something went wrong. Please try again.'))
+          " class="space-y-5">
+            <!-- Web3Forms access key -->
+            <input type="hidden" name="access_key" value="55181a71-5013-4e42-b254-ccba2c616067">
+            <!-- Honeypot spam protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+            <!-- Email subject -->
+            <input type="hidden" name="subject" value="New Contact Form Submission — Kordio Website">
+            <input type="hidden" name="from_name" value="Kordio Website">
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-600 mb-1.5">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="John Smith" class="w-full px-4 py-3 rounded-lg light-input">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-600 mb-1.5">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="john@business.com" class="w-full px-4 py-3 rounded-lg light-input">
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-600 mb-1.5">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+61 4XX XXX XXX" class="w-full px-4 py-3 rounded-lg light-input">
+              </div>
+              <div>
+                <label for="inquiry_type" class="block text-sm font-medium text-gray-600 mb-1.5">Inquiry Type</label>
+                <select id="inquiry_type" name="inquiry_type" class="w-full px-4 py-3 rounded-lg light-input light-select">
+                  <option value="">What can we help with?</option>
+                  <option value="demo">Book a Demo</option>
+                  <option value="pricing">Pricing & Plans</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="support">Technical Support</option>
+                  <option value="job">Job Inquiry</option>
+                  <option value="general">General Question</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-600 mb-1.5">Message *</label>
+              <textarea id="message" name="message" required rows="5" placeholder="Tell us about your restaurant and what you're looking for..." class="w-full px-4 py-3 rounded-lg light-input resize-none"></textarea>
+            </div>
+            <button type="submit" class="bg-neon-purple hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold transition shadow-lg shadow-neon-purple/25 hover:shadow-neon-purple/40 neon-btn w-full sm:w-auto">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="fade-in-up">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Other Ways to Reach Us</h2>
+
+          <div class="space-y-4">
+            <!-- Email -->
+            <div class="light-card rounded-xl p-5 flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary-50 border border-primary-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 text-sm">Email</p>
+                <a href="mailto:hello@kordio.com.au" class="text-primary-600 hover:text-primary-700 transition text-sm">hello@kordio.com.au</a>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="light-card rounded-xl p-5 flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary-50 border border-primary-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 text-sm">Phone</p>
+                <a href="tel:+61485030485" class="text-primary-600 hover:text-primary-700 transition text-sm">+61 485 030 485</a>
+                <p class="text-xs text-gray-400 mt-1">Call to hear Clara AI in action!</p>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="light-card rounded-xl p-5 flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary-50 border border-primary-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 text-sm">Location</p>
+                <p class="text-gray-500 text-sm">Melbourne, Australia</p>
+              </div>
+            </div>
+
+            <!-- Response Time -->
+            <div class="light-card rounded-xl p-5 flex items-start gap-4 !border-primary-200">
+              <div class="w-12 h-12 bg-primary-50 border border-primary-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 text-sm">Quick Response</p>
+                <p class="text-gray-500 text-sm">We typically respond within 24 hours. For urgent enquiries, give us a call.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER (DARK) ==================== -->
+  <footer class="border-t border-white/[0.06] pt-16 pb-8 bg-[#1a0a2e]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2.5 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-neon-purple to-purple-500 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-sm">K</span>
+            </div>
+            <span class="text-lg font-bold text-white tracking-tight">Kordio</span>
+          </a>
+          <p class="text-white/30 text-sm leading-relaxed">AI-powered solutions for modern businesses. Built in Australia.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Products</h4>
+          <ul class="space-y-3">
+            <li><a href="clara.html" class="text-white/30 hover:text-neon-light transition text-sm">Clara AI</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="text-white/30 hover:text-neon-light transition text-sm">About</a></li>
+            <li><a href="contact.html" class="text-white/30 hover:text-neon-light transition text-sm">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white text-sm mb-4">Legal</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-white/30 hover:text-neon-light transition text-sm">Privacy Policy</a></li>
+            <li><a href="#" class="text-white/30 hover:text-neon-light transition text-sm">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/[0.06] pt-8 text-center">
+        <p class="text-white/20 text-sm">&copy; 2026 Kordio. Built in Australia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
