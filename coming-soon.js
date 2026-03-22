@@ -1,6 +1,6 @@
 // ==================== COMING SOON TOGGLE ====================
 // Set to false when ready to launch the full website
-const COMING_SOON = true;
+const COMING_SOON = false;
 
 if (COMING_SOON) {
   document.addEventListener('DOMContentLoaded', () => {
