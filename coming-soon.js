@@ -1,6 +1,6 @@
 // ==================== COMING SOON TOGGLE ====================
 // Set to false when ready to launch the full website
-const COMING_SOON = false;
+const COMING_SOON = true;
 
 if (COMING_SOON) {
   document.addEventListener('DOMContentLoaded', () => {
@@ -16,7 +16,7 @@ if (COMING_SOON) {
           position: fixed;
           inset: 0;
           z-index: 99999;
-          background: linear-gradient(135deg, #1a0a2e 0%, #2a1245 50%, #1a0a2e 100%);
+          background: #1a0a2e;
           display: flex;
           align-items: center;
           justify-content: center;
