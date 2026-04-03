@@ -6,6 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clara AI | AI Virtual Receptionist & Phone Ordering | Kordio</title>
   <meta name="description" content="Clara AI answers your business phone 24/7, takes orders, and books appointments. Built for Australian restaurants, tradies, cleaners, dentists, and more.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kordio.com.au/clara.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://kordio.com.au/clara.html">
+  <meta property="og:title" content="Clara AI | AI Virtual Receptionist & Phone Ordering | Kordio">
+  <meta property="og:description" content="Clara AI answers your business phone 24/7, takes orders, and books appointments. Built for Australian restaurants, tradies, cleaners, dentists, and more.">
+  <meta property="og:image" content="https://kordio.com.au/assets/og-image.png">
+  <meta property="og:site_name" content="Kordio">
+  <meta property="og:locale" content="en_AU">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clara AI | AI Virtual Receptionist & Phone Ordering | Kordio">
+  <meta name="twitter:description" content="Clara AI answers your business phone 24/7, takes orders, and books appointments. Built for Australian restaurants, tradies, cleaners, dentists, and more.">
+  <meta name="twitter:image" content="https://kordio.com.au/assets/og-image.png">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
   <!-- Tailwind CSS CDN -->
@@ -39,6 +54,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Clara AI",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Clara AI answers your business phone 24/7, takes orders, and books appointments. Built for Australian restaurants, tradies, cleaners, dentists, and more.",
+    "url": "https://kordio.com.au/clara.html",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter",
+        "price": "199",
+        "priceCurrency": "AUD",
+        "priceValidUntil": "2027-12-31",
+        "description": "Up to 100 calls/month, 1 AI agent, call recording & transcripts, basic dashboard, email support"
+      },
+      {
+        "@type": "Offer",
+        "name": "Professional",
+        "price": "399",
+        "priceCurrency": "AUD",
+        "priceValidUntil": "2027-12-31",
+        "description": "Up to 500 calls/month, unlimited AI agents, analytics, advanced dashboard, call transfer, priority support"
+      }
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "Kordio",
+      "url": "https://kordio.com.au"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does Clara AI work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Clara AI uses advanced speech recognition and natural language processing to answer your business phone calls, take orders, book appointments, and handle enquiries 24/7."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of businesses can use Clara AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Clara AI is built for Australian restaurants, tradies, cleaners, dentists, and any small business that needs reliable phone answering."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="font-sans text-[#1e293b] bg-white antialiased" x-data="{ mobileMenuOpen: false, activeIndustry: 'restaurants' }">
 
